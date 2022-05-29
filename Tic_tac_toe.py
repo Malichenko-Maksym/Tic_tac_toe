@@ -66,13 +66,13 @@ def screen_refresh():
 pygame.init()
 window = (340,340)
 screen = pygame.display.set_mode(window)
-font= pygame.font.SysFont("calibri",40)
-font1= pygame.font.SysFont("calibri",32)
+general_font= pygame.font.SysFont("calibri",40)
+special_font= pygame.font.SysFont("calibri",32)
 background_colour=(238,233,233)
-caption_cross_won= font.render("Cross player won!",1,(3,52,212), (180,205,205))
-caption_zero_won= font.render("Zero player won!",1,(3,52,212), (180,205,205))
-caption_nobody_won= font.render("You are equal!",1,(3,52,212), (180,205,205))
-caption_restart= font1.render("Click here, to play again",1,(131,139,139), (202, 225, 255))
+caption_cross_won= general_font.render("Cross player won!",1,(3,52,212), (180,205,205))
+caption_zero_won= general_font.render("Zero player won!",1,(3,52,212), (180,205,205))
+caption_nobody_won= general_font.render("You are equal!",1,(3,52,212), (180,205,205))
+caption_restart= special_font.render("Click here, to play again",1,(131,139,139), (202, 225, 255))
 # Check if all necessary file exist, downloading photoes and scaling them to the right sizes, setting icon and title
 try:
     pygame.display.set_caption("Tic-Tac-Toe")
@@ -83,7 +83,7 @@ try:
     zero = pygame.transform.scale(zero, (100,100)).convert_alpha()
 except:
     screen.fill(background_colour)
-    screen.blit(font1.render("Some files are missed!",1,(3,52,212), (180,205,205)),(30,150))
+    screen.blit(special_font.render("Some files are missed!",1,(3,52,212), (180,205,205)),(30,150))
     screen_refresh()
     time.sleep(2)
     quit()
