@@ -5,6 +5,7 @@ import time
 # "game_end" method stop our game, and enable to play cutscene (drawing line)
 # "nullify_sums" method nullify all sums in matrix all lines, it also creates an array, which contain sums of all lines
 #  we use it each time, before we start checking our matrix
+#  "ending" variable saying to us, if cutscene could be played now
 class game_tools_and_variables():
     def __init__(self,width,height, margin):
         self.width = width
@@ -55,7 +56,7 @@ class game_tools_and_variables():
                     pygame.draw.circle(screen, (0,0,255), (self.win_line*self.width+(self.win_line+1)*self.margin+50,17+i), 10)
                     screen_refresh()
             else:
-                for i in range(307):
+                for i in range(305):
                     pygame.draw.circle(screen, (0,0,255), (17+i,self.win_line*self.height+(self.win_line+1)*self.margin+50), 10)
                     screen_refresh()
 # Function allows us to see all printed objects (with a small delay, to let us see, how they were drawed)  
